@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web nước hoa </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="~/Public/css/style.css" type="text/css"/>
+    
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Perfume Store</a>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Tìm sản phẩm...">
+            <span class="icon">&#128269;</span>
+        </div>
+        <!-- Biểu tượng giỏ hàng -->
+        <div class="giohang-icon" style="width:5px; margin-left: 58%;">
+            <i class="fas fa-shopping-cart"></i>
+          
+        </div>
+        <div class="dangnhapdangky">
+            @Html.ActionLink("Đăng nhập", "Login", "Home", new { @class = "btn-login" })
+
+            @Html.ActionLink("Đăng ký", "Register", "Home", new { @class = "btn-log" })
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nước hoa
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Nước hoa nam</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Nước hoa nữ</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Thương hiệu
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Dior</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Gucci</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Chanel</a>
+                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>Về chúng tôi</h3>
+                    <p>Chúng tôi cung cấp các sản phẩm nước hoa cao cấp với chất lượng đảm bảo và dịch vụ khách hàng tận tình. Khám phá mùi hương phù hợp với bạn ngay hôm nay!</p>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#products">Sản phẩm</a></li>
+                        <li><a href="#about">Giới thiệu</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section social">
+                    <h3>Hỗ trợ</h3>
+                    <p>Khách hàng thân thiết (Membership)
+Hướng dẫn đặt hàng & thanh toán
+Điều khoản sử dụng website
+Chính sách bảo mật
+Chính sách bảo hành & đổi trả
+Tuyển dụng</p>
+                </div>
+
+                <div class="footer-section newsletter">
+                    <h3>Nhận bản tin</h3>
+                    <form>
+                        <input type="email" placeholder="Nhập email của bạn" required>
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cửa hàng Nước hoa. Mọi quyền được bảo lưu.</p>
+            </div>
+        </footer>
+
+
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

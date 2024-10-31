@@ -1,0 +1,119 @@
+﻿@model IEnumerable<K22CNT4_TTCD1_PhamThiThuHuyen.Models.tb_Product>
+
+@{
+    ViewBag.Title = "Quản lý sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quản lý sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label for="exampleInputEmail1">Tên danh mục</label>
+        </th>
+        <th>
+            <label for="exampleInputEmail1">ID Sản phẩm</label>
+        </th>
+        <th>
+
+            <label for="exampleInputEmail1">Mô tả</label>
+        </th>
+        <th>
+            <label for="exampleInputEmail1">Chi tiết</label>
+        </th>
+        <th>
+            <label for="exampleInputEmail1">Ảnh</label>
+        </th>
+        <th>
+            <label for="exampleInputEmail1">Giá</label>
+        </th>
+        <th>
+            <label for="exampleInputEmail1">Giá sale</label>
+        </th>
+        <th>
+            <label for="exampleInputEmail1">Số lượng</label>
+        </th>
+      @* <th>
+            @Html.DisplayNameFor(model => model.SeoTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeoDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeoKeyword)
+        </th>*@
+    <th>
+        <label for="exampleInputEmail1">Ngày tạo</label>
+    </th>
+        <th>
+            <label for="exampleInputEmail1">Tạo bởi</label>
+        </th>
+     @*  <th>
+            @Html.DisplayNameFor(model => model.ModifedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModiferBy)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductCategoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceSale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeoTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeoDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeoKeyword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModiferBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
