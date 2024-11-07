@@ -1,4 +1,4 @@
-﻿@model IEnumerable<K22CNT4_TTCD1_PhamThiThuHuyen.Models.ProductCategory>
+﻿@model IEnumerable<K22CNT4_TTCD1_PhamThiThuHuyen.Models.Category>
 
 @{
     ViewBag.Title = "Index";
@@ -19,16 +19,16 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Icon)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.SeoTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SeoDescription)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SeoKeywords)
+            @Html.DisplayNameFor(model => model.Keyword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreateBy)
@@ -54,16 +54,16 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Icon)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.SeoTitle)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SeoDescription)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SeoKeywords)
+            @Html.DisplayFor(modelItem => item.Keyword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreateBy)

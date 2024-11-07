@@ -35,5 +35,13 @@ namespace K22CNT4_TTCD1_PhamThiThuHuyen.Models
         public virtual DbSet<tb_ProductCategory> tb_ProductCategory { get; set; }
         public virtual DbSet<tb_Subscribe> tb_Subscribe { get; set; }
         public virtual DbSet<User> Users { get; set; }
+
+        public System.Data.Entity.DbSet<K22CNT4_TTCD1_PhamThiThuHuyen.Models.News> News { get; set; }
+
+        public System.Data.Entity.DbSet<K22CNT4_TTCD1_PhamThiThuHuyen.Models.Posts> Posts { get; set; }
+
+        public System.Data.Entity.DbSet<K22CNT4_TTCD1_PhamThiThuHuyen.Models.ProductCategory> ProductCategories { get; set; }
+
+        public System.Data.Entity.DbSet<K22CNT4_TTCD1_PhamThiThuHuyen.Models.Category> Categories { get; set; }
     }
 }

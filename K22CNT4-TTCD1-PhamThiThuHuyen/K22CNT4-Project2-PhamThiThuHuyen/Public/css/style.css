@@ -261,11 +261,7 @@ footer {
         }
 }
 
-.navbar {
-    background-color: #C0C0C0; /* Màu nền xanh đậm */
-    padding: 10px 30px; /* Tạo khoảng cách trong navbar */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ mềm mại */
-}
+
 
 .navbar-brand {
     float: left;
@@ -384,9 +380,9 @@ footer {
     }
 }
 
+
+
 .giohang-icon {
-    position: relative;
-    display: inline-block;
     font-size: 24px;
     cursor: pointer;
     color: black;
@@ -412,3 +408,12 @@ footer {
         color: black;
         padding: 10px;
     }
+
+.subnav-container {
+    position: absolute;
+    width: 700px;
+    top: 22px;
+    /* left: 0; */
+    right: 70px;
+}
+

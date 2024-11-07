@@ -1,0 +1,24 @@
+﻿@model List<K22CNT4_Project2_PhamThiThuHuyen.Models.Item>
+
+<h2>Mặt hàng</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên mặt hàng</th>
+            <th>Giá</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>@item.Name</td>
+    <td>@item.Price.ToString("C")</td>
+    <td>
+        @Html.ActionLink("Thêm vào giỏ", "AddToCart", "Cart", new { itemId = item.Id, itemName = item.Name, price = item.Price, quantity = 1 }, null)
+    </td>
+</tr>}
+    </tbody>
+</table>

@@ -7,61 +7,82 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="~/Public/css/header.css" type="text/css"/>
     <link rel="stylesheet" href="~/Public/css/style.css" type="text/css"/>
     
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Perfume Store</a>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Tìm sản phẩm...">
-            <span class="icon">&#128269;</span>
-        </div>
-        <!-- Biểu tượng giỏ hàng -->
-        <div class="giohang-icon" style="width:5px; margin-left: 58%;">
-            <i class="fas fa-shopping-cart"></i>
-          
-        </div>
-        <div class="dangnhapdangky">
-            @Html.ActionLink("Đăng nhập", "Login", "Home", new { @class = "btn-login" })
+    <div class="main_nav_container">
+        <div class="container">
+            <div class="row">
+                @*<div class="col-lg-12 text-right">*@
+                <div class="logo_container">
+                    <a href="/">Perfume Store</a>
+                </div>
+                <nav class="navbar">
+                    <ul class="navbar_menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Nước hoa
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Nước hoa nam</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Nước hoa nữ</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Thương hiệu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Dior</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Gucci</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Chanel</a>
+                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Liên hệ</a>
+                        </li>
 
-            @Html.ActionLink("Đăng ký", "Register", "Home", new { @class = "btn-log" })
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Trang chủ</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Nước hoa
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Nước hoa nam</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Nước hoa nữ</a>
+                    </ul>
+
+                    <ul class="navbar_user" style="margin-left: 0px">
+                        <li class="search-container">
+                            <form action="#" method="post">
+                                <input class="TexBoxTimKiem" id="txtTimKiem" name="txtTimKiem" placeholder="Tìm kiếm sản phẩm..." type="text" value="">                                            <button type="submit" id="searchBtn">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </li>
+
+                        <li><a href="/"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                        <li class="checkout">
+                            <a href="/gio-hang">
+                                <i class="fas fa-shopping-cart"></i>
+                                @Html.ActionLink("Giỏ hàng", "Index", "Cart")
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="user-container">
+                        @Html.ActionLink("Đăng nhập", "Login", "Home", new { @class = "btn-login" })
+
+                        @Html.ActionLink("Đăng ký", "Register", "Home", new { @class = "btn-log" })
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Thương hiệu
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Dior</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Gucci</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Chanel</a>
+                    <div class="hamburger_container">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
                     </div>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Liên hệ</a>
-                </li>
-            </ul>
+                </nav>
+                @*</div>*@
+            </div>
         </div>
-
-    </nav>
-
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -84,12 +105,14 @@
 
                 <div class="footer-section social">
                     <h3>Hỗ trợ</h3>
-                    <p>Khách hàng thân thiết (Membership)
-Hướng dẫn đặt hàng & thanh toán
-Điều khoản sử dụng website
-Chính sách bảo mật
-Chính sách bảo hành & đổi trả
-Tuyển dụng</p>
+                    <p>
+                        Khách hàng thân thiết (Membership)
+                        Hướng dẫn đặt hàng & thanh toán
+                        Điều khoản sử dụng website
+                        Chính sách bảo mật
+                        Chính sách bảo hành & đổi trả
+                        Tuyển dụng
+                    </p>
                 </div>
 
                 <div class="footer-section newsletter">
