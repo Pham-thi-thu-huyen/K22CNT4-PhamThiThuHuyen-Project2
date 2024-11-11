@@ -19,20 +19,20 @@
         <th>
             <label for="exampleInputPassword1">Mô tả</label>
         </th>
-        <th>
+     @*  <th>
             @Html.DisplayNameFor(model => model.SeoTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SeoDescription)
-        </th>
+        </th>*@
 @*        <th>
             @Html.DisplayNameFor(model => model.Keyword)
         </th>*@
         <th>
-            <label for="exampleInputEmail1">Thứ tự</label>
+            <label for="exampleInputEmail1">Id sản phẩm</label>
         </th>
         <th>
-            <label for="exampleInputEmail1">Tạo bởi</label>
+            <label for="exampleInputEmail1">Người tạo</label>
         </th>
         <th>
             <label for="exampleInputEmail1">Ngày tạo</label>
@@ -43,7 +43,7 @@
         <th>
             @Html.DisplayNameFor(model => model.ModifiedBy)
         </th>*@
-        <th></th>
+        <th>Chức năng</th>
     </tr>
 
     @foreach (var item in Model)
@@ -55,12 +55,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
+   @*        <td>
                 @Html.DisplayFor(modelItem => item.SeoTitle)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SeoDescription)
-            </td>
+            </td>*@
 @*            <td>
                 @Html.DisplayFor(modelItem => item.Keyword)
             </td>*@

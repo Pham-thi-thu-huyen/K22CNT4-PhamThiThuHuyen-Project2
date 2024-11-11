@@ -1,24 +1,26 @@
-﻿@model List<K22CNT4_Project2_PhamThiThuHuyen.Models.Item>
+﻿@model IEnumerable<K22CNT4_Project2_PhamThiThuHuyen.Models.Item>
 
-<h2>Mặt hàng</h2>
+<h2>Danh sách sản phẩm</h2>
 
-<table class="table">
+<table>
     <thead>
         <tr>
-            <th>Tên mặt hàng</th>
+            <th>Tên sản phẩm</th>
             <th>Giá</th>
-            <th>Thao tác</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-<tr>
-    <td>@item.Name</td>
-    <td>@item.Price.ToString("C")</td>
-    <td>
-        @Html.ActionLink("Thêm vào giỏ", "AddToCart", "Cart", new { itemId = item.Id, itemName = item.Name, price = item.Price, quantity = 1 }, null)
-    </td>
-</tr>}
+            <tr>
+                <td>@item.Name</td> <!-- Tên sản phẩm -->
+                <td>@item.Price VND</td> <!-- Giá sản phẩm -->
+                <td>
+                    <!-- Link đến trang chi tiết sản phẩm -->
+                    <a href="@Url.Action("Details", "Item", new { id = item.Id })">Xem chi tiết</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,44 +1,45 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@model List<K22CNT4_TTCD1_PhamThiThuHuyen.Models.tb_Product>
 
 <div class="jumbotron text-center">
-        <img class="card-img-top" src="~/Public/images/anh1.png"
-        alt="">
-    </div>
+    <img class="card-img-top" src="~/Public/images/anh1.png"
+         alt="">
+</div>
+<h2 class="text-center">Danh sách sản phẩm</h2>
+<!-- Danh sách sản phẩm -->
+@*<div class="container">
+    <h2 class="text-center">Nước hoa nam</h2>
+    <div class="row">
+        <img class="card-body" src="~/Public/images/anh2.jpg" alt="">
 
-    <!-- Danh sách sản phẩm -->
-    <div class="container">
-        <h2 class="text-center">Nước hoa nam</h2>
-        <div class="row">
-            <img class="card-body" src="~/Public/images/anh2.jpg" alt="">
-
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="~/Public/images/anh3.jpg"
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="~/Public/images/anh3.jpg"
                      alt="VerSace Eros">
-                    <div class="card-body">
-                        <h5 class="card-title">VerSace Eros</h5>
-                        <p class="card-text">3,500,000 VND</p>
-                        <a href="#" class="btn btn-primary">Chi tiết</a>
-                    </div>
+                <div class="card-body">
+                    <h5 class="card-title">VerSace Eros</h5>
+                    <p class="card-text">3,500,000 VND</p>
+                    <a href="" class="btn btn-primary">Chi tiết</a>
                 </div>
             </div>
-            <div class="col-md-4">
+        </div>
+        @* <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="~/Public/images/anh4.jpg" 
-                    alt="Dior Sauvage">
+                    <img class="card-img-top" src="~/Public/images/anh4.jpg"
+                         alt="Dior Sauvage">
                     <div class="card-body">
-                        <h5 class="card-title">Dior Sauvage</h5>
-                        <p class="card-text">2,800,000 VND</p>
-                        <a href="#" class="btn btn-primary">Chi tiết</a>
+                        <h5 class="card-title">@all.Name</h5>
+                        <p class="card-text">@product.Price.ToString("C0")</p>
+                        <a href="@Url.Action("Details", "Home", new { id = product.Id })" class="btn btn-primary">Chi tiết</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
+            </div>*@
+@* <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="~/Public/images/anh5.jpg" 
-                    alt="Charme Guility">
+                    <img class="card-img-top" src="~/Public/images/anh5.jpg"
+                         alt="Charme Guility">
                     <div class="card-body">
                         <h5 class="card-title">Charme Guility</h5>
                         <p class="card-text">2,590,000 VND</p>
@@ -58,29 +59,32 @@
             <div class="col-md-4">
                 <div class="card">
                     <img class="card-img-top" src="~/Public/images/anh7.jpg"
-                     alt="Chanel No.5">
+                         alt="Chanel No.5">
                     <div class="card-body">
                         <h5 class="card-title">Chanel No.5</h5>
                         <p class="card-text">2,500,000 VND</p>
                         <a href="#" class="btn btn-primary">Chi tiết</a>
                     </div>
                 </div>
+            </div>*@
+@foreach (var product in Model)  // Assuming you are passing a List<Product> to the view
+{
+    <div class="col-md-4">
+        <div class="card">
+            <img class="card-img-top" src="@Url.Content("~/Public/images/" + product.image)" alt="@product.Title">
+            <div class="card-body">
+                <h5 class="card-title">@product.Title</h5>
+                <p class="card-text">@product.Price</p>
+                <a href="@Url.Action("Details", "Item", new { id = product.Id })" class="btn btn-primary">Chi tiết</a>
             </div>
-            <div class="col-md-4">
+        </div>
+    </div>
+}
+
+@*  <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" src="~/Public/images/anh8.jpg" 
-                    alt="Gucci Flora">
-                    <div class="card-body">
-                        <h5 class="card-title">Gucci Flora</h5>
-                        <p class="card-text">3,800,000 VND</p>
-                        <a href="#" class="btn btn-primary">Chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="~/Public/images/anh9.jpg" 
-                    alt="Cabotine Rose">
+                    <img class="card-img-top" src="~/Public/images/anh9.jpg"
+                         alt="Cabotine Rose">
                     <div class="card-body">
                         <h5 class="card-title">Cabotine Rose</h5>
                         <p class="card-text">1,590,000 VND</p>
@@ -90,4 +94,4 @@
             </div>
 
         </div>
-    </div>
+    </div>*@

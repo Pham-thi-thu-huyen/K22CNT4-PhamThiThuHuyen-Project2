@@ -6,9 +6,9 @@ body {
 }
 
 .main_nav_container {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #ccc;
+    color: #333;
+    padding: 13px 0;
 }
 
 .container {
@@ -18,8 +18,8 @@ body {
 }
 
 .logo_container a {
-    color: #fff;
-    font-size: 24px;
+    color: #333;
+    font-size: 26px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -43,7 +43,7 @@ body {
     }
 
     .navbar_menu a {
-        color: #fff;
+     
         text-decoration: none;
         padding: 10px 15px;
         display: block;
@@ -52,7 +52,8 @@ body {
     }
 
         .navbar_menu a:hover {
-            background-color: #444;
+            color: #333;
+            background-color: #ccc;
         }
 
 .dropdown-menu {
@@ -72,7 +73,7 @@ body {
 }
 
 .dropdown-item {
-    color: #fff;
+    color: #333;
     padding: 10px 20px;
     display: block;
     font-size: 14px;
@@ -103,7 +104,7 @@ body {
     }
 
     .navbar_user i {
-        color: #fff;
+        color: #333;
         font-size: 18px;
     }
 
@@ -119,7 +120,7 @@ body {
 }
 
 .search-container button {
-    background-color: #555;
+    background-color: #fff;
     border: none;
     color: #fff;
     padding: 5px 10px;
@@ -132,24 +133,32 @@ body {
 
 /* Login and Register Buttons */
 .btn-login, .btn-log {
-    color: #fff;
+    color: #333;
     padding: 10px 15px;
     text-decoration: none;
+    background-color:aliceblue;
 }
 
     .btn-login:hover, .btn-log:hover {
-        background-color: #444;
+        background-color: #808080;
+        color:azure;
     }
 
 /* Cart Section */
+.checkout {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    white-space: nowrap; /* Prevent wrapping */
+}
 .checkout a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     padding: 10px;
 }
 
     .checkout a:hover {
-        color: #ccc;
+        color: #333;
     }
 
 /* Hamburger Icon for Mobile */

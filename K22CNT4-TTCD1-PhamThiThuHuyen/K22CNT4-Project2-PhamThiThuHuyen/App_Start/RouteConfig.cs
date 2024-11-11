@@ -20,6 +20,12 @@ namespace K22CNT4_TTCD1_PhamThiThuHuyen
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[]{"K22CNT4_TTCD1_PhamThiThuHuyen.Controllers"}
                 );
+            routes.MapRoute(
+                name: "ItemDetails",
+                url: "Item/Details/{id}",
+                defaults: new { controller = "Item", action = "Details", id = UrlParameter.Optional }
+);
+
         }
     }
 }

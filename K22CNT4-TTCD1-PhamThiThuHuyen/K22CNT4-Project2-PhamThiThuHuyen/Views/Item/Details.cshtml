@@ -1,0 +1,14 @@
+﻿@model K22CNT4_TTCD1_PhamThiThuHuyen.Models.tb_Product
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <h4>@Model.Title</h4>
+    <p>Mô tả: @Model.Detail</p>
+    <p>Giá: @Model.Price VND</p>
+    <p>Số lượng: @Model.Quantity</p>
+</div>
+
+<p>
+    <a href="@Url.Action("Index", "Home")">Quay lại danh sách sản phẩm</a>
+</p>

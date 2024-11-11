@@ -54,7 +54,7 @@
           @*  @Html.LabelFor(model => model.image, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
                 <label for="exampleInputEmail1">Ảnh</label>
-                @Html.EditorFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="file" name="image" class="form-control" accept="image/*" />
                 @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -122,7 +122,7 @@
         <div class="form-group">
           @* @Html.LabelFor(model => model.CreateBy, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                <label for="exampleInputEmail1">Tạo bởi</label>
+                <label for="exampleInputEmail1">Người tạo</label>
                 @Html.EditorFor(model => model.CreateBy, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.CreateBy, "", new { @class = "text-danger" })
             </div>

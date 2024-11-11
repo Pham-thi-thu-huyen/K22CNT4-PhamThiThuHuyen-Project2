@@ -1,4 +1,5 @@
 ﻿using K22CNT4_TTCD1_PhamThiThuHuyen.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -7,11 +8,16 @@ namespace K22CNT4_TTCD1_PhamThiThuHuyen.Controllers
     public class HomeController : Controller
     {
         private Entities db = new Entities();
-
+        public List<tb_Product> Product { get; set; }
         public ActionResult Index()
         {
-            return View();
+            // Fetch all products from the database
+            var products = db.tb_Product.ToList(); 
+
+            // Pass the list of products to the view
+            return View(products);
         }
+
 
         private class Admin
         {
